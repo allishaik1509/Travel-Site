@@ -1,6 +1,7 @@
-var gulp = require('gulp'),
-	watch = require('gulp-watch'),
-	batch = require('gulp-batch');
+var gulp 	= require('gulp'),
+	watch 	= require('gulp-watch'),
+	postcss = require('gulp-postcss'),
+	autoprefixer = require('autoprefixer');
 
 gulp.task('default',function()
 {
@@ -14,15 +15,17 @@ gulp.task('html',function()
 
 gulp.task('styles',function()
 {
-	console.log('You have written something in Sass and PostCSS');
+	return gulp.src('./app/assets/styles/styles.css')
+	.pipe(postcss([autoprefixer]));
+	.pipe(gulp.dest('./app/temp/styles'));
 })
 gulp.task('watch',function(){
 
-	watch('./app/index.html',batch(function(events, done){
-		gulp.start('html', done);
-		}));
+	gulp.watch('./app/index.html',function(){
+		gulp.start('html');
+		});
 
-	watch('./app/assets/styles/**/*.css', batch(function(events, done){
-		gulp.start('styles', done);
-		}));
+	gulp.watch('./app/assets/styles/**/*.css',function(){
+		gulp.start('styles');
+		});
 });
