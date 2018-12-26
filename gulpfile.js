@@ -4,7 +4,7 @@ var gulp 			= require('gulp'),
 	autoprefixer 	= require('autoprefixer'),
 	cssvars			= require('postcss-simple-vars'),
 	nested			= require('postcss-nested'),
-	batch			= require('gulp-batch');
+	cssImport		= require('postcss-import');
 
 gulp.task('default',function()
 {
@@ -19,16 +19,17 @@ gulp.task('html',function()
 gulp.task('styles',function()
 {
 	return gulp.src('./app/assets/styles/styles.css')
-	.pipe(postcss([cssvars, nested, autoprefixer]))
+	.pipe(watch('./app/assets/styles/styles.css'))
+	.pipe(postcss([cssImport, cssvars, nested, autoprefixer]))
 	.pipe(gulp.dest('./app/temp/styles'));
 })
-gulp.task('watch',function(){
+// gulp.task('watch',function(){
 
-	watch('./app/index.html',batch(function(){
-		gulp.start('html');
-		}));
+// 	watch('./app/index.html',function(){
+// 		gulp.start('html');
+// 		});
 
-	gulp.watch('./app/assets/styles/**/*.css',batch(function(){
-		gulp.start('styles');
-		}));
-});
+// 	watch('./app/assets/styles/**/*.css',function(){
+// 		gulp.start('styles');
+// 		});
+// });
