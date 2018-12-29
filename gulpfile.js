@@ -5,7 +5,8 @@ var gulp 			= require('gulp'),
 	cssvars			= require('postcss-simple-vars'),
 	nested			= require('postcss-nested'),
 	cssImport		= require('postcss-import'),
-	browserSync		= require('browser-sync').create();
+	browserSync		= require('browser-sync').create(),
+	mixins			= require('postcss-mixins');
 
 gulp.task('default',function()
 {
@@ -26,7 +27,11 @@ gulp.task('styles',gulp.series('cssInject',function()
 {
 	return gulp.src('./app/assets/styles/styles.css')
 	.pipe(watch('./app/assets/styles/styles.css'))
-	.pipe(postcss([cssImport, cssvars, nested, autoprefixer]))
+	.on('error',function(errorInfo){
+		console.log(errorInfo.toString());
+		this.emit('end');
+	})
+	.pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer]))
 	.pipe(gulp.dest('./app/temp/styles'));
 }));
 
