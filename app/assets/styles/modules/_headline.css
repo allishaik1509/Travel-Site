@@ -41,4 +41,9 @@
 	&__b_margin_large{
 		margin-bottom: 1.6em;
 	}
+
+	&__no_t_margin{
+
+		 argin-top:0;
+	}
 }
