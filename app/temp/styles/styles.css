@@ -562,12 +562,25 @@ a {
 		margin-right: -65px;
 	}
 
+.row__gutters_m_6{
+		margin-right: -90px;
+	}
+
+.row__gutters_m_6 > div{
+		margin-right: 90px;
+	}
+
 .row__gutters > div{
 		padding-right: 65px;
 	}
 
 .row__b_margin_until_medium{
 		margin-bottom: 1rem;
+	}
+
+.row__m_6{
+		float: left;
+		width: 50%;
 	}
 
 @media(min-width: 800px){
@@ -597,7 +610,7 @@ a {
 
 .genric__content__container p{
 		line-height: 1.65;
-		margin: 1.8rem 0;
+		margin: 0 0 1.8rem 0;
 	}
 
 @media (min-width:530px){
@@ -609,4 +622,36 @@ a {
 
 .genric__content__container p a{
 		font-weight: 700;
+	}
+
+.section-title{
+ font-size: 3.75rem;
+ font-weight: 300;
+ text-align:center;
+}
+
+.section-title strong{
+	font-weight: 500;
+}
+
+.section-title__icon{
+	margin-right: .5rem;
+}
+
+.feature-item{
+	padding-left: 65px;
+	position: relative;
+
+}
+
+.feature-item__icon{
+
+		position: absolute;
+		left: 0;
+	}
+
+.feature-item__title{
+		font-size: 1.875rem;
+		font-weight: 300;
+		margin-bottom: 0.8rem;
 	}

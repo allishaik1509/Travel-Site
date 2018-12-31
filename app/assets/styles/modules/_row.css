@@ -6,6 +6,14 @@
 		margin-right: -65px;
 	}
 
+	&__gutters_m_6{
+		margin-right: -90px;
+	}
+
+	&__gutters_m_6 > div{
+		margin-right: 90px;
+	}
+
 	&__gutters > div{
 		padding-right: 65px;
 	}
@@ -14,6 +22,10 @@
 		margin-bottom: 1rem;
 	}
 
+	&__m_6{
+		float: left;
+		width: 50%;
+	}
 	@mixin atMedium{
 		&__m_4{
 		float: left;
