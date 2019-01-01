@@ -7,25 +7,28 @@
 	}
 
 	&__gutters_m_6{
-		margin-right: -90px;
-	}
-
-	&__gutters_m_6 > div{
-		margin-right: 90px;
+		margin-right: -100px;
 	}
 
 	&__gutters > div{
 		padding-right: 65px;
 	}
 
+	&__gutters_m_6 > div{
+		padding-right: 100px;
+	}
+
+
 	&__b_margin_until_medium{
 		margin-bottom: 1rem;
 	}
-
-	&__m_6{
+	@mixin atMedium{
+		&__m_6{
 		float: left;
 		width: 50%;
 	}
+	}
+	
 	@mixin atMedium{
 		&__m_4{
 		float: left;
@@ -34,6 +37,10 @@
 
 	&__b_margin_until_medium{
 		margin-bottom: 0;
+	}
+
+	&__b_margin_until_m_6{
+		margin-bottom: -10px;
 	}
 
 
