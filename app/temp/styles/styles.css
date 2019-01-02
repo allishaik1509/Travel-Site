@@ -668,20 +668,50 @@ a {
 	}
 
 .feature-item{
-	padding-left: 65px;
 	padding-bottom: 2.5rem;
 	position: relative;
 
+	
+
 }
 
-.feature-item__icon{
+@media (min-width:530px){
 
+.feature-item{
+		padding-left: 65px
+
+	
+
+}
+	}
+
+.feature-item__icon{
+		display: block;
+		margin: 0 auto;
+
+	}
+
+@media (min-width:530px){
+
+.feature-item__icon{
 		position: absolute;
-		left: 0;
+		left: 0
+
+	}
 	}
 
 .feature-item__title{
-		font-size: 1.875rem;
+		font-size: 1.6rem;
 		font-weight: 300;
+		margin-bottom: 0.6rem;
+		text-align: center;
+	}
+
+@media (min-width:530px){
+
+.feature-item__title{
+		text-align: left;
 		margin-bottom: 0.8rem;
+		font-size: 1.875rem
+	}
 	}
