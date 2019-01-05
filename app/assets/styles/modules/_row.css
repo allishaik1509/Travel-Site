@@ -10,6 +10,10 @@
 		margin-right: -100px;
 	}
 
+	&__gutters_m{
+		margin-right: -45px;
+	}
+
 	&__gutters > div{
 		padding-right: 65px;
 	}
@@ -18,10 +22,18 @@
 		padding-right: 100px;
 	}
 
-
+	&__gutters_m > div{
+		padding-right: 45px;
+	}
 	&__b_margin_until_medium{
 		margin-bottom: 1rem;
 	}
+	
+	&__t_padding{
+		padding-top: 80px;
+	}
+
+	
 	@mixin atMedium{
 		&__m_6{
 		float: left;
@@ -43,19 +55,36 @@
 		margin-bottom: -10px;
 	}
 
-
 	&__m_4_larger{
 
 		width: 37%
 	}
-	&__m_8{
+
+}
+	@mixin atMedium{
+		&__m_8{
 		float: left;
 		width: 66.66%
 	}
+	
 	&__m_8_smaller{
+		float: left;
 		width: 63%
 	}
+}
 
+/*begin equal height Rules*/
+&__equal_at_medium{
+	
+	@mixin atMedium{
+		display: flex;
 	}
+		
+		& > div{
+			float: none;
+			display: flex;
+		}		
+
+}
 	
 }
