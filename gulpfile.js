@@ -7,6 +7,7 @@ var gulp 			= require('gulp'),
 	cssImport		= require('postcss-import'),
 	browserSync		= require('browser-sync').create(),
 	mixins			= require('postcss-mixins');
+require('./app/gulp/tasks/sprite');
 
 gulp.task('default',function()
 {
