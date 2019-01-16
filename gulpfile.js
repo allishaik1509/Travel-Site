@@ -6,8 +6,10 @@ var gulp 			= require('gulp'),
 	nested			= require('postcss-nested'),
 	cssImport		= require('postcss-import'),
 	browserSync		= require('browser-sync').create(),
-	mixins			= require('postcss-mixins');
+	mixins			= require('postcss-mixins'),
+	hexrgba			= require('postcss-hexrgba');
 require('./app/gulp/tasks/sprite');
+require('./app/gulp/tasks/scripts');
 
 gulp.task('default',function()
 {
@@ -32,10 +34,9 @@ gulp.task('styles',gulp.series('cssInject',function()
 		console.log(errorInfo.toString());
 		this.emit('end');
 	})
-	.pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer]))
+	.pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer]))
 	.pipe(gulp.dest('./app/temp/styles'));
 }));
-
 
 gulp.task('watch',function(){
 	
@@ -52,6 +53,10 @@ gulp.task('watch',function(){
 	watch('./app/assets/styles/**/*.css',gulp.series('styles',function(){
 		browserSync.reload();
 		}));
+
+	watch('./app/assets/scripts/**/*.js',gulp.series('scripts',function(){
+		browserSync.reload();
+	}));
 });
 
 
