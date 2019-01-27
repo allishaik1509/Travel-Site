@@ -10,6 +10,7 @@ var gulp 			= require('gulp'),
 	hexrgba			= require('postcss-hexrgba');
 require('./app/gulp/tasks/sprite');
 require('./app/gulp/tasks/scripts');
+require('./app/gulp/tasks/build');
 
 gulp.task('default',function()
 {
